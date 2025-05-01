@@ -11,9 +11,13 @@ backend/node_modules/
 # next.js
 /.next/
 /out/
+frontend/.next/
+frontend/out/
 
 # production
 /build
+frontend/build/
+backend/build/
 
 # misc
 .DS_Store
@@ -53,4 +57,8 @@ max_chave_api_firebase.json
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Next.js cache
+.next/cache/
+frontend/.next/cache/ 

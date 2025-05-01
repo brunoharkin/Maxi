@@ -73,7 +73,7 @@ export default function Cadastro() {
       const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
       // Atualiza o nome de usuário
       await updateProfile(userCredential.user, { displayName: formData.username });
-      router.push('/dashboard');
+      router.replace('/dashboard');
     } catch (error: any) {
       let msg = "Erro ao criar conta. Tente novamente.";
       if (error.code === "auth/email-already-in-use") msg = "E-mail já cadastrado.";

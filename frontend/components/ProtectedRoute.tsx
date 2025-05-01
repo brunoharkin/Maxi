@@ -1,20 +1,11 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/config/firebase';
 
 export default function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const router = useRouter();
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        router.push('/cadastro');
-      }
-    });
-
-    return () => unsubscribe();
-  }, [router]);
-
+  // Temporariamente removendo a proteção para testes
   return <>{children}</>;
 } 

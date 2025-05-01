@@ -48,7 +48,7 @@ export default function Login() {
     setIsLoading(true);
     try {
       await signInWithEmailAndPassword(auth, formData.email, formData.password);
-      router.push('/dashboard');
+      router.replace('/dashboard');
     } catch (error: any) {
       let msg = "Erro ao fazer login. Tente novamente.";
       if (error.code === "auth/invalid-email") msg = "E-mail inválido.";
