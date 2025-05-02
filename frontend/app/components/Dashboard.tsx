@@ -86,17 +86,17 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex h-screen bg-[#0A0A0A] text-white">
-      {/* Sidebar */}
-      <div className="w-64 bg-[#1a1a1a] p-6">
-        <div className="flex items-center mb-8">
+    <div className="flex flex-col lg:flex-row h-screen bg-[#0A0A0A] text-white">
+      {/* Sidebar - Responsivo */}
+      <div className="w-full lg:w-64 bg-[#1a1a1a] p-4 lg:p-6">
+        <div className="flex items-center mb-4 lg:mb-8">
           <div className="rounded-full bg-black border border-green-400 p-2 flex items-center justify-center" style={{width: 40, height: 40}}>
             <Image src="/logo.png" alt="Logo Hyper Solution" width={28} height={28} />
           </div>
           <h1 className="text-xl font-bold ml-3 uppercase">HYPER</h1>
         </div>
         
-        <nav className="space-y-6">
+        <nav className="flex lg:flex-col space-x-4 lg:space-x-0 lg:space-y-6">
           <a href="#" className="flex items-center space-x-3 text-white bg-[#4AE290] bg-opacity-10 p-3 rounded-lg">
             <Home size={20} />
             <span>Dashboard</span>
@@ -112,77 +112,77 @@ const Dashboard = () => {
         </nav>
       </div>
 
-      {/* Main Content */}
-      <div className="flex-1 p-8 overflow-auto">
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Visão Geral</h2>
-          <p className="text-gray-400">Monitoramento de métricas em tempo real</p>
+      {/* Main Content - Responsivo */}
+      <div className="flex-1 p-4 lg:p-8 overflow-auto">
+        <div className="mb-4 lg:mb-8">
+          <h2 className="text-xl lg:text-2xl font-semibold mb-2">Visão Geral</h2>
+          <p className="text-gray-400 text-sm lg:text-base">Monitoramento de métricas em tempo real</p>
         </div>
 
-        {/* Top Stats */}
-        <div className="grid grid-cols-4 gap-6 mb-6">
-          <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#4AE290] border-opacity-10">
+        {/* Top Stats - Responsivo */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-4 lg:mb-6">
+          <div className="bg-[#1a1a1a] p-4 lg:p-6 rounded-lg border border-[#4AE290] border-opacity-10">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-400 mb-1">Atendimentos sem resposta</p>
-                <h3 className="text-2xl font-bold">18%</h3>
-                <p className="text-[#4AE290] text-sm mt-1">-2.5% em relação ao mês anterior</p>
+                <p className="text-gray-400 text-sm lg:text-base mb-1">Atendimentos sem resposta</p>
+                <h3 className="text-xl lg:text-2xl font-bold">18%</h3>
+                <p className="text-[#4AE290] text-xs lg:text-sm mt-1">-2.5% em relação ao mês anterior</p>
               </div>
-              <div className="bg-[#4AE290] bg-opacity-10 p-3 rounded-lg">
-                <Clock className="text-[#4AE290]" size={24} />
+              <div className="bg-[#4AE290] bg-opacity-10 p-2 lg:p-3 rounded-lg">
+                <Clock className="text-[#4AE290]" size={20} />
               </div>
             </div>
           </div>
 
-          <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#4AE290] border-opacity-10">
+          <div className="bg-[#1a1a1a] p-4 lg:p-6 rounded-lg border border-[#4AE290] border-opacity-10">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-400 mb-1">Respostas insatisfatórias</p>
-                <h3 className="text-2xl font-bold">7.2%</h3>
-                <p className="text-[#4AE290] text-sm mt-1">-1.3% em relação ao mês anterior</p>
+                <p className="text-gray-400 text-sm lg:text-base mb-1">Respostas insatisfatórias</p>
+                <h3 className="text-xl lg:text-2xl font-bold">7.2%</h3>
+                <p className="text-[#4AE290] text-xs lg:text-sm mt-1">-1.3% em relação ao mês anterior</p>
               </div>
-              <div className="bg-[#4AE290] bg-opacity-10 p-3 rounded-lg">
-                <Clock className="text-[#4AE290]" size={24} />
+              <div className="bg-[#4AE290] bg-opacity-10 p-2 lg:p-3 rounded-lg">
+                <Clock className="text-[#4AE290]" size={20} />
               </div>
             </div>
           </div>
 
-          <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#4AE290] border-opacity-10">
+          <div className="bg-[#1a1a1a] p-4 lg:p-6 rounded-lg border border-[#4AE290] border-opacity-10">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-400 mb-1">Tempo médio de resposta</p>
-                <h3 className="text-2xl font-bold">3.2 min</h3>
-                <p className="text-[#4AE290] text-sm mt-1">-14s em relação à semana anterior</p>
+                <p className="text-gray-400 text-sm lg:text-base mb-1">Tempo médio de resposta</p>
+                <h3 className="text-xl lg:text-2xl font-bold">3.2 min</h3>
+                <p className="text-[#4AE290] text-xs lg:text-sm mt-1">-14s em relação à semana anterior</p>
               </div>
-              <div className="bg-[#4AE290] bg-opacity-10 p-3 rounded-lg">
-                <Clock className="text-[#4AE290]" size={24} />
+              <div className="bg-[#4AE290] bg-opacity-10 p-2 lg:p-3 rounded-lg">
+                <Clock className="text-[#4AE290]" size={20} />
               </div>
             </div>
           </div>
 
-          <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#4AE290] border-opacity-10">
+          <div className="bg-[#1a1a1a] p-4 lg:p-6 rounded-lg border border-[#4AE290] border-opacity-10">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-400 mb-1">Custo por Token</p>
-                <h3 className="text-2xl font-bold">R$ 0.00042</h3>
-                <p className="text-red-500 text-sm mt-1">+0.00003 em relação ao mês anterior</p>
+                <p className="text-gray-400 text-sm lg:text-base mb-1">Custo por Token</p>
+                <h3 className="text-xl lg:text-2xl font-bold">R$ 0.00042</h3>
+                <p className="text-red-500 text-xs lg:text-sm mt-1">+0.00003 em relação ao mês anterior</p>
               </div>
-              <div className="bg-[#4AE290] bg-opacity-10 p-3 rounded-lg">
-                <DollarSign className="text-[#4AE290]" size={24} />
+              <div className="bg-[#4AE290] bg-opacity-10 p-2 lg:p-3 rounded-lg">
+                <DollarSign className="text-[#4AE290]" size={20} />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Charts */}
-        <div className="grid grid-cols-2 gap-6">
-          <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#4AE290] border-opacity-10">
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold">Taxa de Conversão</h3>
-              <p className="text-gray-400 text-sm">Últimos 30 dias</p>
+        {/* Charts - Responsivo */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+          <div className="bg-[#1a1a1a] p-4 lg:p-6 rounded-lg border border-[#4AE290] border-opacity-10">
+            <div className="mb-4 lg:mb-6">
+              <h3 className="text-base lg:text-lg font-semibold">Taxa de Conversão</h3>
+              <p className="text-gray-400 text-xs lg:text-sm">Últimos 30 dias</p>
             </div>
-            <div className="h-[300px] flex flex-col items-center justify-center">
-              <ResponsiveContainer width={250} height={250}>
+            <div className="h-[250px] lg:h-[300px] flex flex-col items-center justify-center">
+              <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
                     data={conversionData}
@@ -233,12 +233,12 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#4AE290] border-opacity-10">
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold">Ticket Médio</h3>
-              <p className="text-gray-400 text-sm">Últimos 6 meses</p>
+          <div className="bg-[#1a1a1a] p-4 lg:p-6 rounded-lg border border-[#4AE290] border-opacity-10">
+            <div className="mb-4 lg:mb-6">
+              <h3 className="text-base lg:text-lg font-semibold">Ticket Médio</h3>
+              <p className="text-gray-400 text-xs lg:text-sm">Últimos 6 meses</p>
             </div>
-            <div className="flex flex-col h-[300px] justify-between">
+            <div className="flex flex-col h-[250px] lg:h-[300px] justify-between">
               <div className="flex-1">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={ticketData}>
@@ -265,22 +265,22 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#4AE290] border-opacity-10">
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold">Desempenho Mensal</h3>
-              <p className="text-gray-400 text-sm">Gráfico de desempenho pode ser adicionado aqui</p>
+          <div className="bg-[#1a1a1a] p-4 lg:p-6 rounded-lg border border-[#4AE290] border-opacity-10">
+            <div className="mb-4 lg:mb-6">
+              <h3 className="text-base lg:text-lg font-semibold">Desempenho Mensal</h3>
+              <p className="text-gray-400 text-xs lg:text-sm">Gráfico de desempenho pode ser adicionado aqui</p>
             </div>
-            <div className="h-[300px] flex items-center justify-center">
+            <div className="h-[250px] lg:h-[300px] flex items-center justify-center">
               <BarChart2 size={48} className="text-gray-600" />
             </div>
           </div>
 
-          <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#4AE290] border-opacity-10">
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold">Saída por Categoria</h3>
-              <p className="text-gray-400 text-sm">Distribuição de vendas</p>
+          <div className="bg-[#1a1a1a] p-4 lg:p-6 rounded-lg border border-[#4AE290] border-opacity-10">
+            <div className="mb-4 lg:mb-6">
+              <h3 className="text-base lg:text-lg font-semibold">Saída por Categoria</h3>
+              <p className="text-gray-400 text-xs lg:text-sm">Distribuição de vendas</p>
             </div>
-            <div className="flex flex-col h-[300px]">
+            <div className="flex flex-col h-[250px] lg:h-[300px]">
               <div className="flex-1 relative">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>

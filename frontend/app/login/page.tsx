@@ -62,31 +62,31 @@ export default function Login() {
 
   return (
     <AuthRedirect>
-      <div className="min-h-screen flex items-center justify-center relative" style={{ background: "#101010" }}>
+      <div className="min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8" style={{ background: "#101010" }}>
         {/* Textura de pontos no fundo */}
         <div aria-hidden className="pointer-events-none fixed inset-0 z-0" style={{backgroundImage: "radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px)", backgroundSize: "18px 18px"}} />
-        <div className="relative z-10 w-full max-w-md space-y-8 rounded-2xl bg-black/90 p-8 shadow-2xl border border-gray-800" style={{backdropFilter: 'blur(2px)'}}>
+        <div className="relative z-10 w-full max-w-md space-y-6 sm:space-y-8 rounded-2xl bg-black/90 p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-800" style={{backdropFilter: 'blur(2px)'}}>
           {/* Logo real */}
           <div className="flex justify-center mb-2">
-            <div className="rounded-full bg-black border border-green-400 p-2 flex items-center justify-center" style={{width: 56, height: 56}}>
-              <Image src="/logo.png" alt="Logo Hyper Solution" width={40} height={40} />
+            <div className="rounded-full bg-black border border-green-400 p-2 flex items-center justify-center" style={{width: 48, height: 48}}>
+              <Image src="/logo.png" alt="Logo Hyper Solution" width={32} height={32} />
             </div>
           </div>
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight" style={{color: neonGreen}}>Login</h2>
-            <p className="mt-2 text-sm text-gray-400">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight" style={{color: neonGreen}}>Login</h2>
+            <p className="mt-2 text-xs sm:text-sm text-gray-400">
               Entre com suas credenciais
             </p>
           </div>
           {errors.general && (
-            <div className="bg-red-900/40 border border-red-800 text-red-100 rounded p-2 text-center mb-2">
+            <div className="bg-red-900/40 border border-red-800 text-red-100 rounded p-2 text-center mb-2 text-xs sm:text-sm">
               {errors.general}
             </div>
           )}
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <div className="space-y-3 sm:space-y-4">
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-gray-300">
+                <label htmlFor="email" className="text-xs sm:text-sm font-medium text-gray-300">
                   E-mail
                 </label>
                 <input
@@ -96,14 +96,14 @@ export default function Login() {
                   placeholder="seu.email@exemplo.com"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`bg-black border border-gray-700 text-white placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-green-400 w-full rounded-xl px-3 py-2 outline-none transition-all duration-150 ${errors.email ? "border-red-500" : ""}`}
+                  className={`bg-black border border-gray-700 text-white placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-green-400 w-full rounded-xl px-3 py-2 text-sm sm:text-base outline-none transition-all duration-150 ${errors.email ? "border-red-500" : ""}`}
                 />
                 {errors.email && (
                   <p className="text-xs text-red-400 mt-1">{errors.email}</p>
                 )}
               </div>
               <div className="space-y-2">
-                <label htmlFor="password" className="text-sm font-medium text-gray-300">
+                <label htmlFor="password" className="text-xs sm:text-sm font-medium text-gray-300">
                   Senha
                 </label>
                 <div className="relative">
@@ -114,7 +114,7 @@ export default function Login() {
                     placeholder="••••••••"
                     value={formData.password}
                     onChange={handleChange}
-                    className={`bg-black border border-gray-700 text-white placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-green-400 w-full rounded-xl px-3 py-2 outline-none transition-all duration-150 ${errors.password ? "border-red-500" : ""}`}
+                    className={`bg-black border border-gray-700 text-white placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-green-400 w-full rounded-xl px-3 py-2 text-sm sm:text-base outline-none transition-all duration-150 ${errors.password ? "border-red-500" : ""}`}
                   />
                   <button
                     type="button"
@@ -122,9 +122,9 @@ export default function Login() {
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-green-400"
                   >
                     {showPassword ? (
-                      <EyeOff className="h-5 w-5" />
+                      <EyeOff className="h-4 w-4 sm:h-5 sm:w-5" />
                     ) : (
-                      <Eye className="h-5 w-5" />
+                      <Eye className="h-4 w-4 sm:h-5 sm:w-5" />
                     )}
                   </button>
                 </div>
@@ -136,12 +136,12 @@ export default function Login() {
             <button
               type="submit"
               disabled={isLoading}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-green-500 px-4 py-2.5 font-semibold text-black hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 active:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-150"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-green-500 px-4 py-2.5 text-sm sm:text-base font-semibold text-black hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 active:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-150"
               style={{backgroundColor: neonGreen}}
             >
               {isLoading ? "Entrando..." : "Entrar"}
             </button>
-            <Link href="/cadastro" className="block text-center text-sm text-gray-400 hover:text-green-400 transition-colors duration-150">
+            <Link href="/cadastro" className="block text-center text-xs sm:text-sm text-gray-400 hover:text-green-400 transition-colors duration-150">
               Não tem uma conta? Cadastre-se
             </Link>
           </form>
